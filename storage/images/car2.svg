@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="רכב אדום">
+  <defs><linearGradient id="bg" x2="0" y2="1"><stop stop-color="#edf3f8"/><stop offset="1" stop-color="#cbd8e4"/></linearGradient></defs>
+  <rect width="640" height="420" rx="24" fill="url(#bg)"/>
+  <path d="M0 325 Q320 285 640 325 V420 H0Z" fill="#b5c4d1"/>
+  <ellipse cx="320" cy="330" rx="235" ry="25" fill="#8496a8" opacity=".35"/>
+  <path d="M112 277 L142 225 Q158 197 198 190 L390 190 Q420 191 447 220 L500 255 Q520 265 526 290 L526 315 L105 315 L105 292 Q105 281 112 277Z" fill="#d94b4b" stroke="#24384b" stroke-width="8"/>
+  <path d="M177 222 Q190 204 211 204 H287 V258 H148Z" fill="#9fc5dd" stroke="#24384b" stroke-width="7"/>
+  <path d="M302 204 H387 Q410 205 430 229 L461 258 H302Z" fill="#9fc5dd" stroke="#24384b" stroke-width="7"/>
+  <path d="M112 278 H520" stroke="#24384b" stroke-width="7"/>
+  <rect x="469" y="270" width="40" height="17" rx="6" fill="#fff0c2"/>
+  <rect x="111" y="270" width="28" height="17" rx="6" fill="#ffdddd"/>
+  <circle cx="205" cy="313" r="43" fill="#263545"/><circle cx="205" cy="313" r="21" fill="#c8d2dc"/>
+  <circle cx="433" cy="313" r="43" fill="#263545"/><circle cx="433" cy="313" r="21" fill="#c8d2dc"/>
+  <rect x="270" y="277" width="100" height="25" rx="4" fill="#f7f9fb" stroke="#24384b" stroke-width="4"/>
+  <text x="320" y="295" font-family="Arial,sans-serif" font-size="15" text-anchor="middle" fill="#24384b">SMART</text>
+  <text x="320" y="75" font-family="Arial,sans-serif" font-size="25" text-anchor="middle" fill="#42576b">רכב אדום</text>
+</svg>

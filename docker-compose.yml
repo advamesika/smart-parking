@@ -1,0 +1,28 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: smart-parking-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./web:/usr/share/nginx/html:ro
+    depends_on:
+      - storage
+    networks:
+      - parking-net
+    restart: unless-stopped
+
+  storage:
+    image: httpd:2.4-alpine
+    container_name: smart-parking-storage
+    ports:
+      - "8081:80"
+    volumes:
+      - ./storage:/usr/local/apache2/htdocs:ro
+    networks:
+      - parking-net
+    restart: unless-stopped
+
+networks:
+  parking-net:
+    driver: bridge

@@ -1,0 +1,41 @@
+name: Smart Parking CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  validate-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Check project files
+        run: |
+          test -f docker-compose.yml
+          test -f web/index.html
+          test -f storage/images/car1.svg
+          test -f storage/images/car2.svg
+          test -f storage/images/car3.svg
+          test -f storage/images/car4.svg
+      - name: Validate Docker Compose
+        run: docker compose config --quiet
+      - name: Start containers
+        run: docker compose up -d
+      - name: Check website and image server
+        run: |
+          for i in {1..30}; do
+            if curl -fsS http://localhost:8080/ >/dev/null && curl -fsS http://localhost:8081/images/car1.svg >/dev/null; then
+              echo "Smart Parking is responding correctly"
+              exit 0
+            fi
+            sleep 2
+          done
+          docker compose logs
+          exit 1
+      - name: Stop containers
+        if: always()
+        run: docker compose down
